@@ -88,12 +88,12 @@ VLAN 10,20   VLAN 30,40   VLAN 10,20   VLAN 30,40
 
 ## VLAN Register
 
-| VLAN | Name | Purpose | Security | SSID (wireless) |
+| VLAN | Name | Purpose | Security |
 |---|---|---|---|---|
-| 10 | Staff | Employee workstations | WPA3-Enterprise | CorpNet |
-| 20 | VoIP | IP phones | WPA3-Enterprise, QoS priority | VoIP-Net |
-| 30 | Servers | File, DNS, DHCP servers | No wireless | — |
-| 40 | Wireless AP mgmt | Access point management | — | — |
+| 10 | Staff | Employee workstations |
+| 20 | VoIP | IP phones |
+| 30 | Servers | File, DNS, DHCP servers 
+| 40 | Wireless AP mgmt | Access point management |
 
 ---
 
