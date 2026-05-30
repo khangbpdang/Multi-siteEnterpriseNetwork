@@ -88,7 +88,7 @@ VLAN 10,20   VLAN 30,40   VLAN 10,20   VLAN 30,40
 
 ## VLAN Register
 
-| VLAN | Name | Purpose | Security |
+| VLAN | Name | Purpose |
 |---|---|---|---|---|
 | 10 | Staff | Employee workstations |
 | 20 | VoIP | IP phones |
