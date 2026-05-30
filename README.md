@@ -60,7 +60,7 @@ VLAN 10,20   VLAN 30,40   VLAN 10,20   VLAN 30,40
 | Core Router | Cisco 2911 | 1 | Inter-site routing, WAN, OSPF |
 | Distribution Switch | Cisco 3560 (Layer 3) | 2 | Inter-VLAN routing, OSPF |
 | Access Switch | Cisco 2960 (Layer 2) | 4 | End device connectivity |
-| End devices | PCs, phones, servers | 8+ | Simulated users and services |
+| End devices | PCs, phones, servers | - | Simulated users and services |
 
 ---
 
