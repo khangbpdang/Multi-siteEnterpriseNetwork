@@ -1,0 +1,40 @@
+hostname AccessSwitch2-2
+no ip domain-lookup
+spanning-tree portfast bpduguard default
+
+!Configure VLANs
+vlan 30
+  name Servers
+  exit
+vlan 40
+  name Wireless
+  exit
+
+!Configure uplink interface g0/1 connected to Distribution Switch 2
+interface g0/1
+  description Uplink to Distribution Switch 2
+  switchport mode trunk
+  switchport trunk allowed vlan 30,40
+  no shutdown
+  exit
+
+!Configure interfaces for VLAN 30 
+interface range fa0/1-10
+  switchport mode access
+  switchport access vlan 30
+  no shutdown
+  exit
+
+!Configure interfaces for VLAN 40
+interface range fa0/11-15
+  switchport mode access
+  switchport access vlan 40
+  no shutdown
+  exit
+
+!Disable unused ports
+interface range fa0/16-24
+  switchport access vlan 1
+  shutdown
+  exit
+end

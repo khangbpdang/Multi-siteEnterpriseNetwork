@@ -1,0 +1,70 @@
+!Configure login access for Firewall via CLI.
+hostname Firewall
+no domain-name
+enable password Test1234
+
+!Configure interface g1/1 connected to ISP
+interface g1/1
+  description Outside to ISP 
+  nameif outside
+  security-level 0
+  ip address 203.0.113.1 255.255.255.252
+  no shutdown
+  exit
+
+!Configure interface g1/2 connected to Core Router
+interface g1/2
+  description Inside to Core Router 
+  nameif inside
+  security-level 100
+  ip address 10.0.0.9 255.255.255.252
+  no shutdown
+  exit
+
+!Configure and disable unused ports
+interface g1/3
+  shutdown
+  exit
+interface g1/4
+  shutdown
+  exit
+interface g1/5
+  shutdown
+  exit
+interface g1/6
+  shutdown
+  exit
+interface g1/7
+  shutdown
+  exit
+interface g1/8
+  shutdown
+  exit
+
+!Configure network object for NAT
+object network INSIDE-NET
+  subnet 10.0.0.0 255.255.0.0
+  nat (inside,outside) dynamic interface
+  exit
+conf t
+
+!Configure ACL for inbound internet traffic
+access-list OUTSIDE-IN extended permit icmp any any echo-reply
+access-list OUTSIDE-IN extended permit icmp any host 203.0.113.2 echo
+access-group OUTSIDE-IN in interface outside
+
+!Configure ACL for internal traffic
+access-list INSIDE-POLICY extended deny ip 10.0.40.0 255.255.255.0 10.0.0.0 255.255.0.0
+access-list INSIDE-POLICY extended permit ip any any
+access-group INSIDE-POLICY in interface inside
+
+!Configure static or default route
+route outside 0.0.0.0 0.0.0.0 203.0.113.2
+
+!Configure route to internal network
+route inside 10.0.0.0 255.255.0.0 10.0.0.10
+
+end
+
+!Save firewall config
+write memory

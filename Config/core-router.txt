@@ -1,0 +1,49 @@
+!Configure login access for router via CLI, console and SSH.
+hostname CoreRouter
+no ip domain-lookup
+enable secret Test1234
+line console 0
+  password Test1234
+  login
+  exit
+line vty 0 4
+  password Test1234
+  login
+  transport input ssh
+  exit
+
+!Configure interface g0/0 connected to Distribution Switch 1
+interface g0/0
+  description Link to Distribution Switch 1
+  ip address 10.0.0.1 255.255.255.252
+  no shutdown
+  exit
+
+!Configure interface g0/1 connected to Distribution Switch 1
+interface g0/1
+  description Link to Distribution Switch 2
+  ip address 10.0.0.5 255.255.255.252
+  no shutdown
+  exit
+
+!Configure interface g0/2 connected to ISP
+interface g0/2
+  description Uplink to Firewall
+  ip address 10.0.0.10 255.255.255.252 
+  no shutdown
+  exit
+
+!Configure OSPF routing
+router ospf 1
+  router-id 1.1.1.1
+  network 10.0.0.0 0.0.0.3 area 0
+  network 10.0.0.4 0.0.0.3 area 0
+  default-information originate
+  exit
+
+!Configure gateway of last resort to be firewall IP
+ip route 0.0.0.0 0.0.0.0 10.0.0.9
+
+!Save and copy running config
+copy running-config startup-config
+startup-config
