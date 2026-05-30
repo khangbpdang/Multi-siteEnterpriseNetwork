@@ -170,13 +170,13 @@ enterprise-network-project/
 | Internet → internal host | ❌ Blocked by implicit deny |
 
 ### OSPF Verification
-
+```
 Core-Router# show ip ospf neighbor
 
 Neighbor ID   State   Address    Interface
 2.2.2.2       FULL    10.0.0.2   G0/0
 3.3.3.3       FULL    10.0.0.6   G0/1
-
+```
 ---
 
 ## Key Troubleshooting Lessons
