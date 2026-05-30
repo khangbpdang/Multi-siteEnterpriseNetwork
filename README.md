@@ -209,16 +209,6 @@ Traffic left the network via NAT but replies were dropped because the ASA had no
 
 ---
 
-## Related Certifications
-
-This project covers practical skills tested in:
-
-- **CompTIA Network+** — VLANs, routing, subnetting, WAN
-- **Cisco CCNA (200-301)** — OSPF, ACLs, NAT, switching, security
-- **CompTIA Security+** — Firewall zones, DMZ, network segmentation
-
----
-
 ## Author
 
 Khang Dang  
