@@ -14,8 +14,6 @@ This project simulates a multi-site enterprise network built in Cisco Packet Tra
 - OSPF dynamic routing with router IDs and passive interfaces
 - NAT/PAT for internet access
 - Cisco ASA 5506-X firewall configuration with security zones
-- ACL policy for guest and IoT traffic isolation
-- DMZ architecture for public-facing services
 - WAN site-to-site connectivity over serial links
 - Network troubleshooting methodology
 - Full IP addressing scheme design with zero subnet overlap
