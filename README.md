@@ -138,12 +138,12 @@ enterprise-network-project/
 ├── configs/
 │   ├── firewall-asa5506.txt
 │   ├── core-router.txt
-│   ├── dist-a.txt
-│   ├── dist-b.txt
-│   ├── sw1.txt
-│   ├── sw2.txt
-│   ├── sw3.txt
-│   └── sw4.txt
+│   ├── dist-1.txt
+│   ├── dist-2.txt
+│   ├── sw-1-1.txt
+│   ├── sw-1-2.txt
+│   ├── sw-2-1.txt
+│   └── sw-2-2.txt
 ```
 
 ---
