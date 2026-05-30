@@ -32,13 +32,11 @@ Internet
     │
   ASA 5506-X Firewall
   ├── Outside  G1/1  203.0.113.2/30
-  ├── Inside   G1/2  10.0.0.9/30
-  └── DMZ      G1/3  172.16.1.1/24  →  Web Server (172.16.1.10)
+  └──  Inside   G1/2  10.0.0.9/30
     │
   Core Router (Cisco 2911)
   ├── G0/0  10.0.0.1/30  →  Dist-A
-  ├── G0/1  10.0.0.5/30  →  Dist-B
-  └── S0/0/0  172.16.0.1/30  →  Branch Router
+  └──  G0/1  10.0.0.5/30  →  Dist-B
     │
   ┌─────────────────────────┐
   │                         │
@@ -75,7 +73,7 @@ VLAN 10,20   VLAN 30,40   VLAN 10,20   VLAN 30,40
 | Core → Dist-A | 10.0.0.0/30 | Core G0/0 | 10.0.0.1 | Dist-A G0/1 | 10.0.0.2 |
 | Core → Dist-B | 10.0.0.4/30 | Core G0/1 | 10.0.0.5 | Dist-B G0/1 | 10.0.0.6 |
 
-### VLAN Subnets — HQ
+### VLAN Subnets
 
 | VLAN | Name | Dist-A Subnet | Dist-A Gateway | Dist-B Subnet | Dist-B Gateway |
 |---|---|---|---|---|---|
