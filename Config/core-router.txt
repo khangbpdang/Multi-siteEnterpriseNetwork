@@ -19,7 +19,7 @@ interface g0/0
   no shutdown
   exit
 
-!Configure interface g0/1 connected to Distribution Switch 1
+!Configure interface g0/1 connected to Distribution Switch 2
 interface g0/1
   description Link to Distribution Switch 2
   ip address 10.0.0.5 255.255.255.252
